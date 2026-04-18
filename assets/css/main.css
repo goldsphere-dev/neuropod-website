@@ -976,6 +976,193 @@ footer {
 
 .toast-icon { color: var(--success); font-size: 1.1rem; }
 
+/* ============================================================
+   DESIGN ENHANCEMENTS
+   ============================================================ */
+
+/* --- Gradient headline text ------------------------------- */
+.gradient-text {
+  background: linear-gradient(135deg, #00c8ff 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Noise overlay (adds depth to dark sections) ---------- */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Keep all section content above noise layer */
+#hero .hero-inner, #hero .hero-gauge,
+#problem .container, #solution .container,
+#how-it-works .container, #who .container,
+#cta .container, footer .container { position: relative; z-index: 2; }
+
+/* --- SVG icon sizing -------------------------------------- */
+.icon-svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* --- Problem card colour accents -------------------------- */
+.problem-card--cyan  { border-top: 2px solid var(--accent); }
+.problem-card--amber { border-top: 2px solid #f59e0b; }
+.problem-card--indigo { border-top: 2px solid #818cf8; }
+
+.problem-card--cyan .problem-icon   { background: rgba(0,200,255,0.1);  border-color: rgba(0,200,255,0.3);  color: var(--accent); }
+.problem-card--amber .problem-icon  { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.25); color: #f59e0b; }
+.problem-card--indigo .problem-icon { background: rgba(129,140,248,0.1); border-color: rgba(129,140,248,0.25); color: #818cf8; }
+
+.problem-card--amber:hover  { border-color: rgba(245,158,11,0.45); }
+.problem-card--indigo:hover { border-color: rgba(129,140,248,0.45); }
+
+/* --- Light science section -------------------------------- */
+#science { background: #eef4ff; }
+#science .section-label { color: var(--accent-dim); }
+#science h2             { color: #080d1a; }
+#science .section-header p { color: #556680; }
+
+#science .science-card {
+  background: #ffffff;
+  border-color: #cdd8f0;
+  box-shadow: 0 2px 16px rgba(0,0,80,0.06);
+}
+#science .science-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 24px rgba(0,200,255,0.12);
+}
+#science .science-card h3 { color: #080d1a; }
+#science .science-card p  { color: #556680; }
+#science .science-stat {
+  background: linear-gradient(135deg, #00c8ff, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+#science .science-disclaimer { color: #8899aa; }
+
+/* --- Neural network SVG background ----------------------- */
+.neural-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 0.7; r: 3.5; }
+  50%       { opacity: 0.2; r: 6; }
+}
+@keyframes signal-travel {
+  0%   { stroke-dashoffset: 300; opacity: 0.6; }
+  100% { stroke-dashoffset: 0;   opacity: 0; }
+}
+
+.nn-node { fill: var(--accent); }
+.nn-edge { stroke: var(--accent); stroke-width: 0.75; opacity: 0.18; fill: none; }
+.nn-signal { stroke: var(--accent); stroke-width: 1.5; fill: none; stroke-dasharray: 40 260; opacity: 0; }
+
+.nn-node.n1  { animation: node-pulse 3.2s ease-in-out infinite; }
+.nn-node.n2  { animation: node-pulse 3.2s ease-in-out 0.4s infinite; }
+.nn-node.n3  { animation: node-pulse 3.2s ease-in-out 0.9s infinite; }
+.nn-node.n4  { animation: node-pulse 3.2s ease-in-out 1.4s infinite; }
+.nn-node.n5  { animation: node-pulse 3.2s ease-in-out 0.6s infinite; }
+.nn-node.n6  { animation: node-pulse 3.2s ease-in-out 2.0s infinite; }
+.nn-node.n7  { animation: node-pulse 3.2s ease-in-out 0.2s infinite; }
+.nn-node.n8  { animation: node-pulse 3.2s ease-in-out 1.7s infinite; }
+.nn-node.n9  { animation: node-pulse 3.2s ease-in-out 2.6s infinite; }
+.nn-node.n10 { animation: node-pulse 3.2s ease-in-out 1.1s infinite; }
+
+.nn-signal.s1 { animation: signal-travel 4s ease-in-out 0.5s infinite; }
+.nn-signal.s2 { animation: signal-travel 4s ease-in-out 1.5s infinite; }
+.nn-signal.s3 { animation: signal-travel 4s ease-in-out 2.5s infinite; }
+.nn-signal.s4 { animation: signal-travel 4s ease-in-out 0.8s infinite; }
+
+/* --- Discipline score gauge ------------------------------ */
+.hero-gauge {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 260px;
+}
+
+.gauge-svg { width: 260px; height: 260px; overflow: visible; display: block; }
+
+/* circumference of r=105: 2π×105 = 659.73 */
+.gauge-arc {
+  fill: none;
+  stroke: url(#gaugeGrad);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transform-origin: 130px 130px;
+  transform: rotate(-90deg);
+  stroke-dasharray: 659.73;
+  stroke-dashoffset: 659.73;
+  transition: stroke-dashoffset 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.gauge-arc-glow {
+  fill: none;
+  stroke: #00c8ff;
+  stroke-width: 22;
+  stroke-linecap: round;
+  transform-origin: 130px 130px;
+  transform: rotate(-90deg);
+  stroke-dasharray: 659.73;
+  stroke-dashoffset: 659.73;
+  filter: blur(10px);
+  opacity: 0;
+  transition: stroke-dashoffset 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s ease;
+}
+.gauge-arc.run        { stroke-dashoffset: 145.14; } /* 78/100 */
+.gauge-arc-glow.run   { stroke-dashoffset: 145.14; opacity: 0.25; }
+
+.gauge-score-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 54px;
+  font-weight: 800;
+  fill: #ffffff;
+  letter-spacing: -0.04em;
+}
+.gauge-label-main {
+  font-family: 'Inter', sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  fill: #7a94bb;
+  letter-spacing: 0.12em;
+}
+.gauge-dim {
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  fill: #4a6080;
+  letter-spacing: 0.04em;
+}
+.gauge-caption {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 10px;
+}
+
+/* Narrow hero-inner on desktop so gauge doesn't overlap text */
+@media (min-width: 901px) {
+  .hero-inner { max-width: 600px; }
+}
+
 /* --- Responsive ------------------------------------------- */
 @media (max-width: 900px) {
   .solution-layout {

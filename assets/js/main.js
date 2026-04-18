@@ -192,6 +192,43 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 
+/* --- Discipline score gauge animation -------------------- */
+const gaugeArc   = document.getElementById('gaugeArc');
+const gaugeScore = document.getElementById('gaugeScore');
+const gaugeGlow  = gaugeArc ? gaugeArc.previousElementSibling : null;
+
+if (gaugeArc) {
+  const targetScore   = 78;
+  const circumference = 659.73;
+  const targetOffset  = circumference * (1 - targetScore / 100); // 145.14
+
+  const gaugeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Trigger arc animation
+        gaugeArc.classList.add('run');
+        if (gaugeGlow) gaugeGlow.classList.add('run');
+
+        // Count up the score number
+        const duration = 2200;
+        const start    = performance.now();
+        function countUp(now) {
+          const elapsed  = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased    = 1 - Math.pow(1 - progress, 3);
+          gaugeScore.textContent = Math.round(eased * targetScore);
+          if (progress < 1) requestAnimationFrame(countUp);
+        }
+        requestAnimationFrame(countUp);
+        gaugeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  gaugeObserver.observe(document.getElementById('hero'));
+}
+
+
 /* --- Animate stat card numbers on scroll ----------------- */
 function animateCounter(el, target, suffix = '') {
   const duration = 1600;
