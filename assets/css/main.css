@@ -1163,6 +1163,170 @@ footer {
   .hero-inner { max-width: 600px; }
 }
 
+/* --- Lucide icon sizing ----------------------------------- */
+.problem-icon [data-lucide] { width: 22px; height: 22px; stroke-width: 1.5; }
+.feature-icon [data-lucide] { width: 22px; height: 22px; stroke-width: 1.5; }
+.who-icon [data-lucide]     { width: 36px; height: 36px; stroke-width: 1.5; color: var(--accent); }
+.trust-strip-item [data-lucide] { width: 15px; height: 15px; stroke-width: 2; color: var(--accent); flex-shrink: 0; }
+.vs-card-title [data-lucide]    { width: 14px; height: 14px; stroke-width: 2; display: inline; vertical-align: middle; margin-right: 4px; }
+.vs-list [data-lucide]          { width: 14px; height: 14px; stroke-width: 2; flex-shrink: 0; }
+
+/* --- Trust strip ------------------------------------------ */
+#trust-strip {
+  background: var(--navy-mid);
+  border-top: 1px solid var(--navy-border);
+  border-bottom: 1px solid var(--navy-border);
+  padding: 16px 0;
+  overflow: hidden;
+}
+
+.trust-strip-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.trust-strip-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 24px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.trust-strip-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--navy-border);
+  flex-shrink: 0;
+}
+
+/* --- Stats row -------------------------------------------- */
+#stats-row {
+  background: var(--navy-card);
+  border-top: 1px solid var(--navy-border);
+  border-bottom: 1px solid var(--navy-border);
+  padding: 72px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.stats-item {
+  padding: 16px 40px;
+  text-align: center;
+  border-right: 1px solid var(--navy-border);
+}
+.stats-item:last-child { border-right: none; }
+
+.stats-value {
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, #00c8ff, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stats-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  max-width: 220px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Stress vs Recovery cards ----------------------------- */
+.vs-section {
+  margin-top: 80px;
+  padding-top: 64px;
+  border-top: 1px solid var(--navy-border);
+}
+
+.vs-label {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.vs-grid {
+  display: grid;
+  grid-template-columns: 1fr 56px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.vs-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+.vs-card {
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  height: 100%;
+}
+
+.vs-card--stress { border-top: 2px solid #f59e0b; }
+.vs-card--calm   { border-top: 2px solid var(--accent); }
+
+.vs-card-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vs-card--stress .vs-card-title { color: #f59e0b; }
+.vs-card--calm   .vs-card-title { color: var(--accent); }
+
+.vs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vs-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.vs-card--stress .vs-list [data-lucide] { color: #f59e0b; }
+.vs-card--calm   .vs-list [data-lucide] { color: var(--accent); }
+
 /* --- Responsive ------------------------------------------- */
 @media (max-width: 900px) {
   .solution-layout {
@@ -1183,6 +1347,24 @@ footer {
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .mobile-menu { display: block; }
+}
+
+@media (max-width: 700px) {
+  .vs-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-item {
+    border-right: none;
+    border-bottom: 1px solid var(--navy-border);
+    padding: 24px 16px;
+  }
+  .stats-item:last-child { border-bottom: none; }
+  .trust-strip-divider { display: none; }
+  .trust-strip-item { padding: 6px 16px; }
 }
 
 @media (max-width: 600px) {
