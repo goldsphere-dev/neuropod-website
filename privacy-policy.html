@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — NeuroPod</title>
+  <meta name="description" content="NeuroPod Privacy Policy. How we collect, use, and protect your personal information including voice data.">
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+  <style>
+    .policy-hero {
+      padding: 140px 0 72px;
+      background: var(--navy-mid);
+      border-bottom: 1px solid var(--navy-border);
+    }
+    .policy-hero .section-label { margin-bottom: 16px; }
+    .policy-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .policy-hero p {
+      font-size: 1rem;
+      max-width: 560px;
+    }
+    .policy-meta {
+      display: flex;
+      gap: 24px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .policy-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+    .policy-meta-item [data-lucide] { width: 14px; height: 14px; color: var(--accent); }
+
+    .policy-body {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 72px 24px 96px;
+    }
+
+    .policy-toc {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+    .policy-toc h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .policy-toc ol {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .policy-toc li { font-size: 0.88rem; }
+    .policy-toc a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .policy-toc a:hover { color: var(--accent); }
+
+    .policy-section {
+      margin-bottom: 56px;
+      scroll-margin-top: 100px;
+    }
+    .policy-section h2 {
+      font-size: 1.25rem;
+      color: var(--white);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--navy-border);
+    }
+    .policy-section h3 {
+      font-size: 1rem;
+      color: var(--text);
+      margin: 24px 0 10px;
+    }
+    .policy-section p {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .policy-section ul, .policy-section ol {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .policy-section li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .policy-section strong { color: var(--text); }
+
+    .policy-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      font-size: 0.85rem;
+    }
+    .policy-table th {
+      background: var(--navy-card);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--navy-border);
+    }
+    .policy-table td {
+      padding: 10px 14px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--navy-border);
+      vertical-align: top;
+    }
+    .policy-table tr:last-child td { border-bottom: none; }
+    .policy-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .policy-highlight {
+      background: var(--accent-glow);
+      border: 1px solid rgba(0,200,255,0.2);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .policy-highlight p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .policy-highlight strong { color: var(--accent); }
+
+    .policy-contact-box {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+    .policy-contact-box h3 {
+      color: var(--white);
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .policy-contact-box p { font-size: 0.88rem; margin-bottom: 8px; }
+    .policy-contact-box a { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      .policy-hero { padding: 120px 0 48px; }
+      .policy-body { padding: 48px 0 72px; }
+      .policy-table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav id="navbar" class="scrolled">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html">Neuro<span>Pod</span></a>
+      <div class="nav-right">
+        <a href="index.html#cta" class="btn btn-primary nav-cta">Join the Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Hero -->
+  <div class="policy-hero">
+    <div class="container">
+      <span class="section-label">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p>How NeuroPod collects, uses, and protects your personal information. We are committed to full compliance with POPIA and GDPR principles.</p>
+      <div class="policy-meta">
+        <div class="policy-meta-item"><i data-lucide="calendar"></i> Effective date: 18 April 2026</div>
+        <div class="policy-meta-item"><i data-lucide="refresh-cw"></i> Last updated: 18 April 2026</div>
+        <div class="policy-meta-item"><i data-lucide="shield-check"></i> POPIA and GDPR compliant</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Body -->
+  <div class="container">
+    <div class="policy-body">
+
+      <!-- Table of contents -->
+      <div class="policy-toc">
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#who-we-are">Who We Are</a></li>
+          <li><a href="#what-we-collect">What Personal Information We Collect</a></li>
+          <li><a href="#voice-data">Voice Data and Audio Processing</a></li>
+          <li><a href="#how-we-use">How We Use Your Information</a></li>
+          <li><a href="#third-parties">Third-Party Service Providers</a></li>
+          <li><a href="#retention">Data Retention</a></li>
+          <li><a href="#your-rights">Your Rights</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#cookies">Cookies</a></li>
+          <li><a href="#changes">Changes to This Policy</a></li>
+          <li><a href="#contact">Contact and Information Officer</a></li>
+        </ol>
+      </div>
+
+      <div class="policy-highlight">
+        <p><strong>Plain-language summary:</strong> NeuroPod records your voice during trading sessions only when you have given explicit consent. Audio is deleted within 60 seconds of transcription. We do not sell your data. You can delete your account and all associated data at any time.</p>
+      </div>
+
+
+      <!-- 1. Who We Are -->
+      <div class="policy-section" id="who-we-are">
+        <h2>1. Who We Are</h2>
+        <p>NeuroPod is a neuroscience-based trading discipline platform operated by NeuroPod (Pty) Ltd ("NeuroPod", "we", "us", "our"). We are the responsible party (data controller) in respect of your personal information under the Protection of Personal Information Act 4 of 2013 ("POPIA").</p>
+        <p>Our platform is accessible at <strong>myneuropod.com</strong> and <strong>app.myneuropod.com</strong>.</p>
+        <p>This Privacy Policy applies to all personal information collected through our website, web application, and related services.</p>
+      </div>
+
+
+      <!-- 2. What We Collect -->
+      <div class="policy-section" id="what-we-collect">
+        <h2>2. What Personal Information We Collect</h2>
+
+        <h3>Information you provide directly</h3>
+        <ul>
+          <li><strong>Account information:</strong> name, email address, password (hashed)</li>
+          <li><strong>Profile information:</strong> trader type, experience level, risk profile, trading systems</li>
+          <li><strong>Payment information:</strong> billing details processed by Paddle (we do not store card numbers)</li>
+          <li><strong>Waitlist information:</strong> email address and optional trading challenge details submitted via the waitlist form</li>
+        </ul>
+
+        <h3>Information generated during use</h3>
+        <ul>
+          <li><strong>Voice audio:</strong> recorded during active trading sessions only, with your explicit consent</li>
+          <li><strong>Voice transcripts:</strong> text output from audio transcription</li>
+          <li><strong>Behavioral data:</strong> discipline scores, session events, trade records, behavioral patterns</li>
+          <li><strong>Session metadata:</strong> session timestamps, duration, pre-session checklist responses</li>
+          <li><strong>Usage data:</strong> pages visited, features used, interaction logs</li>
+        </ul>
+
+        <h3>Technical information collected automatically</h3>
+        <ul>
+          <li>IP address, browser type, device type</li>
+          <li>Cookies and session identifiers (see Section 9)</li>
+          <li>Error logs and diagnostic data</li>
+        </ul>
+      </div>
+
+
+      <!-- 3. Voice Data -->
+      <div class="policy-section" id="voice-data">
+        <h2>3. Voice Data and Audio Processing</h2>
+
+        <p>Voice recording is the most sensitive data NeuroPod processes. We have designed strict controls around it.</p>
+
+        <div class="policy-highlight">
+          <p><strong>Key fact:</strong> We only record your voice when you have given explicit, informed, separate consent and only during an active session. We never record outside of sessions. Audio is permanently deleted within 60 seconds of successful transcription.</p>
+        </div>
+
+        <h3>How it works</h3>
+        <ul>
+          <li>You must actively check a consent checkbox during onboarding before voice features are enabled</li>
+          <li>Recording only activates when your session is in <strong>SESSION_ACTIVE</strong> state</li>
+          <li>Audio is transmitted to OpenAI's Whisper service for speech-to-text transcription</li>
+          <li>The audio file is permanently deleted from our systems within 60 seconds of successful transcription</li>
+          <li>The resulting text transcript is retained according to your plan's retention period (see Section 6)</li>
+        </ul>
+
+        <h3>What voice data is used for</h3>
+        <ul>
+          <li>Analysing your behavioral patterns during trading sessions</li>
+          <li>Building and refining your personal voice baseline profile</li>
+          <li>Delivering real-time coaching interventions during sessions</li>
+          <li>Generating post-session behavioral insights</li>
+        </ul>
+
+        <h3>What voice data is never used for</h3>
+        <ul>
+          <li>Recording outside of active sessions</li>
+          <li>Sharing with third parties beyond the transcription service (OpenAI Whisper)</li>
+          <li>Training AI models (we do not use your data to train models)</li>
+          <li>Sale or commercial exploitation</li>
+        </ul>
+
+        <h3>Withdrawing voice consent</h3>
+        <p>You may withdraw your voice consent at any time from your account settings. Withdrawal stops future recording immediately. It does not affect transcripts already stored — to delete those, use the account deletion process in Section 7.</p>
+      </div>
+
+
+      <!-- 4. How We Use -->
+      <div class="policy-section" id="how-we-use">
+        <h2>4. How We Use Your Information</h2>
+
+        <table class="policy-table">
+          <thead>
+            <tr>
+              <th>Purpose</th>
+              <th>Legal basis (POPIA)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Providing the NeuroPod platform and session companion service</td>
+              <td>Performance of contract</td>
+            </tr>
+            <tr>
+              <td>Processing voice audio and generating behavioral insights</td>
+              <td>Explicit consent</td>
+            </tr>
+            <tr>
+              <td>Processing payments and managing subscriptions</td>
+              <td>Performance of contract</td>
+            </tr>
+            <tr>
+              <td>Sending transactional emails (session reports, account notices)</td>
+              <td>Performance of contract</td>
+            </tr>
+            <tr>
+              <td>Sending waitlist and marketing communications</td>
+              <td>Consent (you may unsubscribe at any time)</td>
+            </tr>
+            <tr>
+              <td>Improving platform features and fixing bugs</td>
+              <td>Legitimate interest</td>
+            </tr>
+            <tr>
+              <td>Complying with legal obligations and regulatory requirements</td>
+              <td>Legal obligation</td>
+            </tr>
+            <tr>
+              <td>Fraud prevention and security monitoring</td>
+              <td>Legitimate interest</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- 5. Third Parties -->
+      <div class="policy-section" id="third-parties">
+        <h2>5. Third-Party Service Providers</h2>
+        <p>We use third-party service providers to operate our platform. Each is governed by a data processing agreement. We only share what is necessary for the specific service.</p>
+
+        <table class="policy-table">
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Purpose</th>
+              <th>Data shared</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>OpenAI</strong></td>
+              <td>Voice-to-text transcription (Whisper)</td>
+              <td>Voice audio during sessions</td>
+              <td>United States</td>
+            </tr>
+            <tr>
+              <td><strong>Zoho Campaigns</strong></td>
+              <td>Waitlist and marketing email management</td>
+              <td>Email address, name</td>
+              <td>India / US</td>
+            </tr>
+            <tr>
+              <td><strong>SendGrid</strong></td>
+              <td>Transactional email delivery</td>
+              <td>Email address, name</td>
+              <td>United States</td>
+            </tr>
+            <tr>
+              <td><strong>Paddle</strong></td>
+              <td>Payment processing and subscription management</td>
+              <td>Name, email, billing details</td>
+              <td>United Kingdom</td>
+            </tr>
+            <tr>
+              <td><strong>Cloudflare</strong></td>
+              <td>DNS, CDN, DDoS protection</td>
+              <td>IP address, request metadata</td>
+              <td>United States</td>
+            </tr>
+            <tr>
+              <td><strong>Vercel</strong></td>
+              <td>Website hosting</td>
+              <td>Request logs, IP address</td>
+              <td>United States</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>We do not sell, rent, or trade your personal information to any third party for their own marketing purposes.</p>
+      </div>
+
+
+      <!-- 6. Retention -->
+      <div class="policy-section" id="retention">
+        <h2>6. Data Retention</h2>
+
+        <table class="policy-table">
+          <thead>
+            <tr>
+              <th>Data type</th>
+              <th>Retention period</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Voice audio files</td>
+              <td>Deleted within 60 seconds</td>
+              <td>Deleted immediately after successful transcription</td>
+            </tr>
+            <tr>
+              <td>Voice transcripts (Free plan)</td>
+              <td>30 days</td>
+              <td>Deleted automatically on expiry</td>
+            </tr>
+            <tr>
+              <td>Voice transcripts (Starter)</td>
+              <td>90 days</td>
+              <td>Deleted automatically on expiry</td>
+            </tr>
+            <tr>
+              <td>Voice transcripts (Pro)</td>
+              <td>180 days</td>
+              <td>Deleted automatically on expiry</td>
+            </tr>
+            <tr>
+              <td>Voice transcripts (Elite)</td>
+              <td>365 days</td>
+              <td>Deleted automatically on expiry</td>
+            </tr>
+            <tr>
+              <td>Session metadata and trade records</td>
+              <td>Duration of account</td>
+              <td>Retained for behavioral modeling</td>
+            </tr>
+            <tr>
+              <td>Behavioral summaries and analytics</td>
+              <td>Permanent</td>
+              <td>Anonymised aggregate data</td>
+            </tr>
+            <tr>
+              <td>Billing records</td>
+              <td>7 years</td>
+              <td>South African financial compliance (SARS)</td>
+            </tr>
+            <tr>
+              <td>Audit logs</td>
+              <td>Permanent</td>
+              <td>Security and regulatory requirement</td>
+            </tr>
+            <tr>
+              <td>Account data (inactive accounts)</td>
+              <td>24 months inactivity</td>
+              <td>Notification sent before deletion</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- 7. Your Rights -->
+      <div class="policy-section" id="your-rights">
+        <h2>7. Your Rights</h2>
+        <p>Under POPIA and GDPR principles, you have the following rights regarding your personal information:</p>
+
+        <h3>Right of access</h3>
+        <p>You may request a copy of the personal information we hold about you. We will respond within 30 days.</p>
+
+        <h3>Right to correction</h3>
+        <p>If any information we hold is inaccurate or incomplete, you may request that we correct it.</p>
+
+        <h3>Right to deletion</h3>
+        <p>You may request deletion of your account and associated personal data. To delete your account:</p>
+        <ul>
+          <li>Go to Account Settings and select "Delete Account", or</li>
+          <li>Email <a href="mailto:hello@myneuropod.com">hello@myneuropod.com</a> with the subject "Account Deletion Request"</li>
+        </ul>
+        <p>Upon deletion: voice recordings, transcripts, and personal data are permanently deleted. Billing records are retained for 7 years as required by South African financial law. Anonymised behavioral aggregate data may be retained.</p>
+
+        <h3>Right to object</h3>
+        <p>You may object to processing of your personal information for marketing purposes at any time by using the unsubscribe link in any email or by contacting us directly.</p>
+
+        <h3>Right to withdraw consent</h3>
+        <p>Where processing is based on consent (including voice recording), you may withdraw consent at any time. Withdrawal does not affect the lawfulness of processing prior to withdrawal.</p>
+
+        <h3>Right to lodge a complaint</h3>
+        <p>If you believe we have handled your personal information in violation of POPIA, you may lodge a complaint with the Information Regulator (South Africa):</p>
+        <ul>
+          <li>Website: <strong>www.inforegulator.org.za</strong></li>
+          <li>Email: <strong>inforeg@justice.gov.za</strong></li>
+        </ul>
+      </div>
+
+
+      <!-- 8. Security -->
+      <div class="policy-section" id="security">
+        <h2>8. Security</h2>
+        <p>We implement appropriate technical and organisational measures to protect your personal information against unauthorised access, loss, destruction, or alteration. These include:</p>
+        <ul>
+          <li>Encryption in transit (TLS 1.3) and at rest</li>
+          <li>JWT-based authentication with short-lived access tokens</li>
+          <li>Role-based access controls limiting internal data access</li>
+          <li>Automatic deletion of voice audio within 60 seconds of transcription</li>
+          <li>Regular security reviews and audit logging</li>
+          <li>Cloudflare DDoS protection and firewall</li>
+        </ul>
+        <p>In the event of a data breach affecting your personal information, we will notify the Information Regulator within 72 hours and affected users without undue delay, as required by POPIA Section 22.</p>
+      </div>
+
+
+      <!-- 9. Cookies -->
+      <div class="policy-section" id="cookies">
+        <h2>9. Cookies</h2>
+        <p>Our website (myneuropod.com) uses minimal cookies:</p>
+
+        <table class="policy-table">
+          <thead>
+            <tr>
+              <th>Cookie</th>
+              <th>Purpose</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Session cookie</td>
+              <td>Maintains your login state in the app</td>
+              <td>Session (deleted on browser close)</td>
+            </tr>
+            <tr>
+              <td>Cloudflare cookies</td>
+              <td>Security and performance</td>
+              <td>Up to 1 year</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>We do not use advertising cookies or third-party tracking cookies on the marketing site. You may disable cookies in your browser settings, though this may affect app functionality.</p>
+      </div>
+
+
+      <!-- 10. Changes -->
+      <div class="policy-section" id="changes">
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Where changes are material, we will notify you by email (if you have an account) and update the "Last updated" date at the top of this page. Continued use of NeuroPod after changes are posted constitutes acceptance of the updated policy.</p>
+        <p>Where changes affect the basis on which we process voice data, we will request fresh consent before resuming voice features.</p>
+      </div>
+
+
+      <!-- 11. Contact -->
+      <div class="policy-section" id="contact">
+        <h2>11. Contact and Information Officer</h2>
+        <p>To exercise any of your rights, raise a privacy concern, or ask questions about this policy, please contact us:</p>
+
+        <div class="policy-contact-box">
+          <h3>NeuroPod Information Officer</h3>
+          <p><strong>Email:</strong> <a href="mailto:hello@myneuropod.com">hello@myneuropod.com</a></p>
+          <p><strong>Subject line:</strong> Privacy Request</p>
+          <p><strong>Response time:</strong> We aim to respond within 5 business days and will resolve your request within 30 days.</p>
+          <p style="margin-top: 16px; font-size: 0.82rem; color: var(--text-dim);">NeuroPod (Pty) Ltd is registered as a responsible party with the Information Regulator of South Africa as required under POPIA.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Neuro<span>Pod</span></div>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@myneuropod.com">Contact</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy">© 2026 NeuroPod. All rights reserved. myneuropod.com</p>
+    </div>
+  </footer>
+
+  <script>lucide.createIcons();</script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -980,6 +980,36 @@ footer {
    DESIGN ENHANCEMENTS
    ============================================================ */
 
+/* ============================================================
+   IMAGE INTEGRATION
+   Drop images into assets/images/ with these filenames and
+   they will activate automatically:
+     hero-neural.jpg   — neural network / brain scan for hero overlay
+     trader-desk.jpg   — trader at desk for Who It's For section
+     brain-scan.jpg    — brain scan for Science section background
+   ============================================================ */
+
+/* Hero neural image — overlays behind content at low opacity */
+#hero.has-image::before {
+  background:
+    linear-gradient(to right, rgba(8,13,26,0.92) 40%, rgba(8,13,26,0.5) 100%),
+    url('../assets/images/hero-neural.jpg') center/cover no-repeat;
+}
+
+/* Trader desk image in Who It's For section */
+#who.has-image {
+  background-image:
+    linear-gradient(to bottom, rgba(13,20,39,0.97), rgba(13,20,39,0.97)),
+    url('../assets/images/trader-desk.jpg') center/cover no-repeat;
+}
+
+/* Brain scan image in Science section card area */
+.science-image-card {
+  background:
+    linear-gradient(rgba(238,244,255,0.92), rgba(238,244,255,0.92)),
+    url('../assets/images/brain-scan.jpg') center/cover no-repeat;
+}
+
 /* --- Gradient headline text ------------------------------- */
 .gradient-text {
   background: linear-gradient(135deg, #00c8ff 0%, #818cf8 100%);
