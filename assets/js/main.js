@@ -155,7 +155,7 @@ document.addEventListener('click', (e) => {
 
 
 /* --- Scrollspy -------------------------------------------- */
-const sections = ['problem', 'how-it-works', 'science', 'who', 'cta'];
+const sections = ['problem', 'solution', 'how-it-works', 'science', 'who', 'cta'];
 const navLinks = document.querySelectorAll('.nav-link');
 
 const spyObserver = new IntersectionObserver((entries) => {
