@@ -32,7 +32,31 @@
   <nav id="navbar">
     <div class="container nav-inner">
       <a class="nav-logo" href="#">Neuro<span>Pod</span></a>
-      <a href="#cta" class="btn btn-primary nav-cta">Join the Waitlist</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#problem"    class="nav-link" data-section="problem">The Problem</a></li>
+        <li><a href="#how-it-works" class="nav-link" data-section="how-it-works">How It Works</a></li>
+        <li><a href="#science"    class="nav-link" data-section="science">The Science</a></li>
+        <li><a href="#who"        class="nav-link" data-section="who">Who It's For</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#cta" class="btn btn-primary nav-cta">Join the Waitlist</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul>
+        <li><a href="#problem"      class="mobile-link">The Problem</a></li>
+        <li><a href="#how-it-works" class="mobile-link">How It Works</a></li>
+        <li><a href="#science"      class="mobile-link">The Science</a></li>
+        <li><a href="#who"          class="mobile-link">Who It's For</a></li>
+        <li><a href="#cta"          class="mobile-link mobile-cta-link">Join the Waitlist</a></li>
+      </ul>
     </div>
   </nav>
 

@@ -120,6 +120,64 @@ if (ctaForm) {
 }
 
 
+/* --- Hamburger / mobile menu ------------------------------ */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+function closeMobileMenu() {
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileMenu.classList.remove('open');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+}
+
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.contains('open');
+  if (isOpen) {
+    closeMobileMenu();
+  } else {
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    mobileMenu.classList.add('open');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+  }
+});
+
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.mobile-link').forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+// Close on outside click
+document.addEventListener('click', (e) => {
+  if (!navbar.contains(e.target)) closeMobileMenu();
+});
+
+
+/* --- Scrollspy -------------------------------------------- */
+const sections = ['problem', 'how-it-works', 'science', 'who', 'cta'];
+const navLinks = document.querySelectorAll('.nav-link');
+
+const spyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.section === id);
+      });
+    }
+  });
+}, {
+  rootMargin: '-30% 0px -60% 0px',
+  threshold: 0
+});
+
+sections.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) spyObserver.observe(el);
+});
+
+
 /* --- Smooth scroll for nav links -------------------------- */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
