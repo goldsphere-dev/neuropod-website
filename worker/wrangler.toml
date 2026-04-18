@@ -7,11 +7,16 @@
 #      to apply the schema to the remote database.
 #   3. Run `wrangler deploy` from inside the worker/ folder to deploy the Worker.
 #   4. In Cloudflare Dashboard → Workers & Pages → myneuropod-waitlist →
-#      Settings → Triggers → add custom domain: waitlist.myneuropod.com
+#      Settings → Triggers → Routes → add route: www.myneuropod.com/subscribe*
+#      (This lets the Worker handle POST /subscribe while Pages serves everything else.)
 
 name = "myneuropod-waitlist"
 main = "src/index.ts"
 compatibility_date = "2025-01-01"
+
+[[routes]]
+pattern = "www.myneuropod.com/subscribe*"
+zone_name = "myneuropod.com"
 
 [[d1_databases]]
 binding = "WAITLIST_DB"

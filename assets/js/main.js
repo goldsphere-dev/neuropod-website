@@ -56,7 +56,7 @@ function isValidEmail(email) {
 // Cloudflare Worker endpoint for waitlist subscriptions.
 // Once the Worker is deployed and a custom route is configured at
 // waitlist.myneuropod.com, this URL will be live.
-const WAITLIST_ENDPOINT = 'https://waitlist.myneuropod.com/subscribe';
+const WAITLIST_ENDPOINT = 'https://www.myneuropod.com/subscribe';
 
 async function handleFormSubmit(form) {
   const emailInput = form.querySelector('input[type="email"]');
