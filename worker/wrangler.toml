@@ -1,0 +1,22 @@
+# NeuroPod Waitlist — Cloudflare Worker
+#
+# Setup steps:
+#   1. Run `wrangler d1 create myneuropod-waitlist` to create the D1 database.
+#      Paste the returned database_id into the [[d1_databases]] block below.
+#   2. Run `wrangler d1 execute myneuropod-waitlist --file=./schema.sql --remote`
+#      to apply the schema to the remote database.
+#   3. Run `wrangler deploy` from inside the worker/ folder to deploy the Worker.
+#   4. In Cloudflare Dashboard → Workers & Pages → myneuropod-waitlist →
+#      Settings → Triggers → add custom domain: waitlist.myneuropod.com
+
+name = "myneuropod-waitlist"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[[d1_databases]]
+binding = "WAITLIST_DB"
+database_name = "myneuropod-waitlist"
+database_id = "PASTE_DATABASE_ID_AFTER_CREATION"
+
+[vars]
+ALLOWED_ORIGIN = "https://www.myneuropod.com"

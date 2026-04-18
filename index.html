@@ -12,11 +12,39 @@
   <meta property="og:description" content="The world's first neuroscience-based trading discipline companion. Real-time AI that detects emotional hijack before you blow the trade.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.myneuropod.com">
+  <meta property="og:site_name" content="NeuroPod">
+  <meta property="og:image" content="https://www.myneuropod.com/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="NeuroPod — Neuroscience-based trading discipline companion">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NeuroPod: Your Brain Is Sabotaging Your Trades">
+  <meta name="twitter:description" content="The world's first neuroscience-based trading discipline companion. Real-time AI that detects emotional hijack before you blow the trade.">
+  <meta name="twitter:image" content="https://www.myneuropod.com/assets/images/og-image.png">
+  <link rel="canonical" href="https://www.myneuropod.com/">
+
+  <!-- Structured Data: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "NeuroPod",
+    "description": "Neuroscience-based AI companion for trading discipline. Real-time emotional hijack detection and intervention for traders.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "category": "Free Waitlist"
+    }
+  }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -24,8 +52,9 @@
   <!-- Lucide icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
-  <!-- Favicon placeholder -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
 </head>
 <body>
 
@@ -46,7 +75,7 @@
 
       <div class="nav-right">
         <a href="#cta" class="btn btn-primary nav-cta">Join the Waitlist</a>
-        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -70,10 +99,10 @@
        SECTION 1 — HERO
   ====================================================== -->
   <section id="hero">
-    <div class="noise-overlay"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
 
     <!-- Neural network background -->
-    <svg class="neural-bg" viewBox="0 0 1100 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <svg class="neural-bg" aria-hidden="true" viewBox="0 0 1100 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <!-- Edges -->
       <line class="nn-edge" x1="550" y1="120" x2="820" y2="280"/>
       <line class="nn-edge" x1="550" y1="120" x2="350" y2="260"/>
@@ -123,13 +152,19 @@
         </p>
 
         <form class="hero-form reveal reveal-delay-3" id="hero-form" novalidate>
+          <label for="hero-email" class="sr-only">Email address</label>
           <input
             type="email"
+            id="hero-email"
             name="email"
             placeholder="Enter your email address"
             autocomplete="email"
             required
           >
+          <div class="hp-field">
+            <label for="hero-website">Leave this blank</label>
+            <input type="text" id="hero-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <button type="submit" class="btn btn-primary">Join the Waitlist</button>
         </form>
         <p class="hero-form-note reveal reveal-delay-3">
@@ -148,7 +183,8 @@
 
       <!-- Discipline Score Gauge (desktop only) -->
       <div class="hero-gauge reveal reveal-delay-3">
-        <svg class="gauge-svg" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+        <svg class="gauge-svg" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated discipline score gauge showing 78 out of 100">
+          <title>Discipline Score Gauge</title>
           <defs>
             <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%"   stop-color="#00c8ff"/>
@@ -194,15 +230,15 @@
   <div id="trust-strip">
     <div class="container">
       <div class="trust-strip-row">
-        <div class="trust-strip-item"><i data-lucide="microscope"></i><span>Neuroscience-backed</span></div>
+        <div class="trust-strip-item"><i data-lucide="microscope" aria-hidden="true"></i><span>Neuroscience-backed</span></div>
         <div class="trust-strip-divider"></div>
-        <div class="trust-strip-item"><i data-lucide="mic"></i><span>Voice-powered AI</span></div>
+        <div class="trust-strip-item"><i data-lucide="mic" aria-hidden="true"></i><span>Voice-powered AI</span></div>
         <div class="trust-strip-divider"></div>
-        <div class="trust-strip-item"><i data-lucide="zap"></i><span>Real-time intervention</span></div>
+        <div class="trust-strip-item"><i data-lucide="zap" aria-hidden="true"></i><span>Real-time intervention</span></div>
         <div class="trust-strip-divider"></div>
-        <div class="trust-strip-item"><i data-lucide="activity"></i><span>Behavior-focused</span></div>
+        <div class="trust-strip-item"><i data-lucide="activity" aria-hidden="true"></i><span>Behavior-focused</span></div>
         <div class="trust-strip-divider"></div>
-        <div class="trust-strip-item"><i data-lucide="shield-check"></i><span>Built for funded traders</span></div>
+        <div class="trust-strip-item"><i data-lucide="shield-check" aria-hidden="true"></i><span>Built for funded traders</span></div>
       </div>
     </div>
   </div>
@@ -212,7 +248,7 @@
        SECTION 2 — THE PROBLEM
   ====================================================== -->
   <section id="problem">
-    <div class="noise-overlay"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
     <div class="container">
 
       <div class="section-header reveal">
@@ -224,19 +260,19 @@
       <div class="problem-grid">
 
         <div class="problem-card problem-card--cyan reveal reveal-delay-1">
-          <div class="problem-icon"><i data-lucide="brain"></i></div>
+          <div class="problem-icon"><i data-lucide="brain" aria-hidden="true"></i></div>
           <h3>The Amygdala Override</h3>
           <p>When you take a loss, your amygdala triggers a threat response. Cortisol floods the bloodstream. The prefrontal cortex (the part that calculates risk and follows rules) goes offline. You are not choosing to revenge trade. Your nervous system is choosing for you.</p>
         </div>
 
         <div class="problem-card problem-card--amber reveal reveal-delay-2">
-          <div class="problem-icon"><i data-lucide="trending-down"></i></div>
+          <div class="problem-icon"><i data-lucide="trending-down" aria-hidden="true"></i></div>
           <h3>The Strategy Myth</h3>
           <p>90% of funded traders blame their system when they blow an account. The system was fine. The execution wasn't. Strategy is not the variable. The trader executing it under stress is the variable. Fixing the strategy without fixing the trader changes nothing.</p>
         </div>
 
         <div class="problem-card problem-card--indigo reveal reveal-delay-3">
-          <div class="problem-icon"><i data-lucide="refresh-cw"></i></div>
+          <div class="problem-icon"><i data-lucide="refresh-cw" aria-hidden="true"></i></div>
           <h3>The Invisible Pattern</h3>
           <p>Revenge trades, overtrading, rule breaks, cutting winners early. These aren't random mistakes. They are predictable behavioral responses triggered by identifiable nervous system states. The pattern repeats because nothing is measuring or interrupting it.</p>
         </div>
@@ -278,7 +314,7 @@
        SECTION 3 — THE SOLUTION
   ====================================================== -->
   <section id="solution">
-    <div class="noise-overlay"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
     <div class="container">
       <div class="solution-layout">
 
@@ -293,7 +329,7 @@
           <div class="solution-features">
 
             <div class="feature-item reveal reveal-delay-1">
-              <div class="feature-icon"><i data-lucide="mic"></i></div>
+              <div class="feature-icon"><i data-lucide="mic" aria-hidden="true"></i></div>
               <div class="feature-text">
                 <h4>Real-Time Session Companion</h4>
                 <p>Your AI companion listens during live sessions, tracks your behavioral state, and delivers micro-interventions before patterns escalate.</p>
@@ -301,7 +337,7 @@
             </div>
 
             <div class="feature-item reveal reveal-delay-2">
-              <div class="feature-icon"><i data-lucide="bar-chart-2"></i></div>
+              <div class="feature-icon"><i data-lucide="bar-chart-2" aria-hidden="true"></i></div>
               <div class="feature-text">
                 <h4>Discipline Score (0 to 100)</h4>
                 <p>Measured across 8 behavioral dimensions after every session. Not a feeling. A number. With trends, so you can see improvement over time.</p>
@@ -309,7 +345,7 @@
             </div>
 
             <div class="feature-item reveal reveal-delay-3">
-              <div class="feature-icon"><i data-lucide="shield-alert"></i></div>
+              <div class="feature-icon"><i data-lucide="shield-alert" aria-hidden="true"></i></div>
               <div class="feature-text">
                 <h4>Cascade Prevention</h4>
                 <p>The loss spiral (one bad trade becoming three) stopped before it starts. NeuroPod detects the early behavioral signals of emotional escalation and intervenes.</p>
@@ -365,28 +401,28 @@
         <div class="vs-grid">
 
           <div class="vs-card vs-card--stress">
-            <div class="vs-card-title"><i data-lucide="alert-triangle"></i> Without NeuroPod</div>
+            <div class="vs-card-title"><i data-lucide="alert-triangle" aria-hidden="true"></i> Without NeuroPod</div>
             <ul class="vs-list">
-              <li><i data-lucide="x-circle"></i> Amygdala fires, logic shuts down</li>
-              <li><i data-lucide="x-circle"></i> Loss triggers revenge trade impulse</li>
-              <li><i data-lucide="x-circle"></i> Rules break under emotional pressure</li>
-              <li><i data-lucide="x-circle"></i> One bad trade becomes three</li>
-              <li><i data-lucide="x-circle"></i> Session bleeds into the next</li>
-              <li><i data-lucide="x-circle"></i> Pattern repeats. Account shrinks.</li>
+              <li><i data-lucide="x-circle" aria-hidden="true"></i> Amygdala fires, logic shuts down</li>
+              <li><i data-lucide="x-circle" aria-hidden="true"></i> Loss triggers revenge trade impulse</li>
+              <li><i data-lucide="x-circle" aria-hidden="true"></i> Rules break under emotional pressure</li>
+              <li><i data-lucide="x-circle" aria-hidden="true"></i> One bad trade becomes three</li>
+              <li><i data-lucide="x-circle" aria-hidden="true"></i> Session bleeds into the next</li>
+              <li><i data-lucide="x-circle" aria-hidden="true"></i> Pattern repeats. Account shrinks.</li>
             </ul>
           </div>
 
           <div class="vs-badge">VS</div>
 
           <div class="vs-card vs-card--calm">
-            <div class="vs-card-title"><i data-lucide="shield-check"></i> With NeuroPod</div>
+            <div class="vs-card-title"><i data-lucide="shield-check" aria-hidden="true"></i> With NeuroPod</div>
             <ul class="vs-list">
-              <li><i data-lucide="check-circle"></i> Tension detected before it escalates</li>
-              <li><i data-lucide="check-circle"></i> Micro-intervention at the exact right moment</li>
-              <li><i data-lucide="check-circle"></i> Behavioral pattern interrupted in real time</li>
-              <li><i data-lucide="check-circle"></i> Loss spiral stopped at signal one</li>
-              <li><i data-lucide="check-circle"></i> Post-session recovery locks in calm</li>
-              <li><i data-lucide="check-circle"></i> Discipline score improves. Edge holds.</li>
+              <li><i data-lucide="check-circle" aria-hidden="true"></i> Tension detected before it escalates</li>
+              <li><i data-lucide="check-circle" aria-hidden="true"></i> Micro-intervention at the exact right moment</li>
+              <li><i data-lucide="check-circle" aria-hidden="true"></i> Behavioral pattern interrupted in real time</li>
+              <li><i data-lucide="check-circle" aria-hidden="true"></i> Loss spiral stopped at signal one</li>
+              <li><i data-lucide="check-circle" aria-hidden="true"></i> Post-session recovery locks in calm</li>
+              <li><i data-lucide="check-circle" aria-hidden="true"></i> Discipline score improves. Edge holds.</li>
             </ul>
           </div>
 
@@ -502,7 +538,7 @@
       <div class="who-grid">
 
         <div class="who-card reveal reveal-delay-1">
-          <div class="who-icon"><i data-lucide="trophy"></i></div>
+          <div class="who-icon"><i data-lucide="trophy" aria-hidden="true"></i></div>
           <div>
             <h4>Funded Traders</h4>
             <p>You passed the evaluation. The account is live. Now one bad session can cost you everything. NeuroPod protects funded accounts by stopping the behavioral patterns that blow them.</p>
@@ -510,7 +546,7 @@
         </div>
 
         <div class="who-card reveal reveal-delay-2">
-          <div class="who-icon"><i data-lucide="building-2"></i></div>
+          <div class="who-icon"><i data-lucide="building-2" aria-hidden="true"></i></div>
           <div>
             <h4>Prop Firm Traders</h4>
             <p>Prop firms don't fail traders. Traders fail themselves. If you have the edge but your execution under pressure lets you down, NeuroPod bridges that gap.</p>
@@ -518,7 +554,7 @@
         </div>
 
         <div class="who-card reveal reveal-delay-3">
-          <div class="who-icon"><i data-lucide="smartphone"></i></div>
+          <div class="who-icon"><i data-lucide="smartphone" aria-hidden="true"></i></div>
           <div>
             <h4>Retail Traders</h4>
             <p>Trading your own capital with no institutional support. No risk manager. No accountability partner. NeuroPod fills that gap: a companion that is always in the session with you.</p>
@@ -547,13 +583,19 @@
         <p>Founding members get priority access, locked-in pricing, and direct input into the product roadmap. The waitlist is free. The opportunity is limited.</p>
 
         <form class="cta-form" id="cta-form" novalidate>
+          <label for="cta-email" class="sr-only">Email address</label>
           <input
             type="email"
+            id="cta-email"
             name="email"
             placeholder="Enter your email address"
             autocomplete="email"
             required
           >
+          <div class="hp-field">
+            <label for="cta-website">Leave this blank</label>
+            <input type="text" id="cta-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <button type="submit" class="btn btn-primary">Secure My Founding Member Spot</button>
         </form>
 
@@ -589,7 +631,8 @@
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
         </ul>
       </div>
-      <p class="footer-copy">© 2026 NeuroPod. All rights reserved. myneuropod.com</p>
+      <p class="footer-disclaimer">NeuroPod is a behavioral training tool. It does not provide financial, investment, or trading advice. Trading involves substantial risk of capital loss. Past performance does not indicate future results.</p>
+      <p class="footer-copy">© <span id="footer-year">2026</span> NeuroPod. All rights reserved. myneuropod.com</p>
     </div>
   </footer>
 
@@ -603,5 +646,9 @@
 
   <script>lucide.createIcons();</script>
   <script src="assets/js/main.js"></script>
+
+  <!-- Cloudflare Web Analytics -->
+  <!-- To enable: Cloudflare Dashboard → Analytics & Logs → Web Analytics → Add a site → copy the token from the snippet Cloudflare generates -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "PASTE_YOUR_CLOUDFLARE_ANALYTICS_TOKEN_HERE"}'></script>
 </body>
 </html>

@@ -1411,3 +1411,33 @@ footer {
 
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
+
+/* --- Screen-reader only utility --------------------------- */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* --- Honeypot field (hidden from humans, visible to bots) - */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --- Footer legal disclaimer ------------------------------ */
+.footer-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  max-width: 700px;
+  margin: 0 auto 16px;
+  text-align: center;
+  line-height: 1.5;
+}

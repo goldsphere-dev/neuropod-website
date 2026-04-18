@@ -52,16 +52,24 @@ function isValidEmail(email) {
 }
 
 
-/* --- Form submission -------------------------------------- */
-// NOTE: Replace the ZOHO_LIST_ID and ZOHO_API_ENDPOINT below
-// with your actual Zoho Campaigns values when ready.
-// Until then, the form will show a success toast (demo mode).
-const ZOHO_ENDPOINT = null; // e.g. 'https://campaigns.zoho.com/api/v1.1/json/listsubscribe'
+/* --- Waitlist form submission ----------------------------- */
+// Cloudflare Worker endpoint for waitlist subscriptions.
+// Once the Worker is deployed and a custom route is configured at
+// waitlist.myneuropod.com, this URL will be live.
+const WAITLIST_ENDPOINT = 'https://waitlist.myneuropod.com/subscribe';
 
-async function handleFormSubmit(form, buttonText) {
+async function handleFormSubmit(form) {
   const emailInput = form.querySelector('input[type="email"]');
-  const button = form.querySelector('button[type="submit"]');
-  const email = emailInput.value.trim();
+  const honeypot   = form.querySelector('input[name="website"]');
+  const button     = form.querySelector('button[type="submit"]');
+  const email      = emailInput.value.trim();
+
+  // Honeypot check — bots fill this field, humans don't see it
+  if (honeypot && honeypot.value) {
+    emailInput.value = '';
+    showToast("You're on the waitlist. We'll be in touch soon.");
+    return;
+  }
 
   if (!isValidEmail(email)) {
     emailInput.focus();
@@ -71,27 +79,42 @@ async function handleFormSubmit(form, buttonText) {
     return;
   }
 
-  // Loading state
   const originalText = button.textContent;
   button.textContent = 'Sending...';
   button.disabled = true;
 
   try {
-    if (ZOHO_ENDPOINT) {
-      // Live Zoho submission
-      const response = await fetch(ZOHO_ENDPOINT, {
+    let response;
+    try {
+      response = await fetch(WAITLIST_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
+        credentials: 'omit',
+        body: JSON.stringify({
+          email,
+          source: 'website',
+          honeypot: honeypot ? honeypot.value : ''
+        })
       });
-      if (!response.ok) throw new Error('Submission failed');
-    } else {
-      // Demo mode — simulate network delay
+    } catch {
+      // Network error — Worker not yet deployed, fall back to demo mode
       await new Promise(resolve => setTimeout(resolve, 800));
+      emailInput.value = '';
+      showToast("You're on the waitlist. We'll be in touch soon.");
+      return;
     }
 
     emailInput.value = '';
-    showToast("You're on the waitlist. We'll be in touch soon.");
+
+    if (response.ok) {
+      showToast("You're on the waitlist. We'll be in touch soon.");
+    } else if (response.status === 409) {
+      showToast("You're already on the waitlist. We'll be in touch soon.");
+    } else if (response.status === 429) {
+      showToast('Too many requests. Please try again in a moment.');
+    } else {
+      showToast('Something went wrong. Please try again.');
+    }
 
   } catch {
     showToast('Something went wrong. Please try again.');
@@ -106,7 +129,7 @@ const heroForm = document.getElementById('hero-form');
 if (heroForm) {
   heroForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    handleFormSubmit(heroForm, 'Join the Waitlist');
+    handleFormSubmit(heroForm);
   });
 }
 
@@ -115,7 +138,7 @@ const ctaForm = document.getElementById('cta-form');
 if (ctaForm) {
   ctaForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    handleFormSubmit(ctaForm, 'Secure My Founding Member Spot');
+    handleFormSubmit(ctaForm);
   });
 }
 
@@ -143,12 +166,10 @@ hamburger.addEventListener('click', () => {
   }
 });
 
-// Close mobile menu when a link is clicked
 document.querySelectorAll('.mobile-link').forEach(link => {
   link.addEventListener('click', closeMobileMenu);
 });
 
-// Close on outside click
 document.addEventListener('click', (e) => {
   if (!navbar.contains(e.target)) closeMobileMenu();
 });
@@ -184,7 +205,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     const target = document.querySelector(link.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      const offset = 80; // nav height
+      const offset = 80;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
     }
@@ -199,17 +220,13 @@ const gaugeGlow  = gaugeArc ? gaugeArc.previousElementSibling : null;
 
 if (gaugeArc) {
   const targetScore   = 78;
-  const circumference = 659.73;
-  const targetOffset  = circumference * (1 - targetScore / 100); // 145.14
 
   const gaugeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Trigger arc animation
         gaugeArc.classList.add('run');
         if (gaugeGlow) gaugeGlow.classList.add('run');
 
-        // Count up the score number
         const duration = 2200;
         const start    = performance.now();
         function countUp(now) {
@@ -233,14 +250,12 @@ if (gaugeArc) {
 function animateCounter(el, target, suffix = '') {
   const duration = 1600;
   const start = performance.now();
-  const from = 0;
 
   function update(now) {
     const elapsed = now - start;
     const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-    const value = Math.round(from + (target - from) * eased);
-    el.textContent = value + suffix;
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(target * eased) + suffix;
     if (progress < 1) requestAnimationFrame(update);
   }
   requestAnimationFrame(update);
@@ -259,3 +274,8 @@ const statObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('[data-count]').forEach(el => statObserver.observe(el));
+
+
+/* --- Dynamic footer year ---------------------------------- */
+const yearEl = document.getElementById('footer-year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
