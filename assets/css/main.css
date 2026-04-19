@@ -929,7 +929,7 @@ footer {
 
 .footer-links a {
   font-size: 0.85rem;
-  color: var(--text-dim);
+  color: var(--text-muted);
   transition: color var(--transition);
 }
 
@@ -940,7 +940,7 @@ footer {
 
 .footer-copy {
   font-size: 0.8rem;
-  color: var(--text-dim);
+  color: var(--text-muted);
   width: 100%;
   text-align: center;
   margin-top: 16px;
@@ -1055,30 +1055,16 @@ footer {
 .problem-card--amber:hover  { border-color: rgba(245,158,11,0.45); }
 .problem-card--indigo:hover { border-color: rgba(129,140,248,0.45); }
 
-/* --- Light science section -------------------------------- */
-#science { background: #eef4ff; }
-#science .section-label { color: var(--accent-dim); }
-#science h2             { color: #080d1a; }
-#science .section-header p { color: #556680; }
+/* --- Science section (dark theme) ------------------------ */
+#science { background: var(--navy-card); }
 
-#science .science-card {
-  background: #ffffff;
-  border-color: #cdd8f0;
-  box-shadow: 0 2px 16px rgba(0,0,80,0.06);
-}
-#science .science-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 4px 24px rgba(0,200,255,0.12);
-}
-#science .science-card h3 { color: #080d1a; }
-#science .science-card p  { color: #556680; }
+/* Keep gradient on the large stat numbers for visual punch */
 #science .science-stat {
   background: linear-gradient(135deg, #00c8ff, #818cf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-#science .science-disclaimer { color: #8899aa; }
 
 /* --- Neural network SVG background ----------------------- */
 .neural-bg {
@@ -1435,7 +1421,7 @@ footer {
 /* --- Footer legal disclaimer ------------------------------ */
 .footer-disclaimer {
   font-size: 0.75rem;
-  color: var(--text-dim);
+  color: var(--text-muted);
   max-width: 700px;
   margin: 0 auto 16px;
   text-align: center;
