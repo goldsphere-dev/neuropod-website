@@ -307,7 +307,16 @@ nav.scrolled {
 .hero-inner {
   position: relative;
   z-index: 2;
+  flex: 1;
   max-width: 780px;
+}
+
+/* Hero flex row: text left, gauge right */
+#hero .container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
 }
 
 .hero-eyebrow {
@@ -1108,11 +1117,9 @@ footer {
 
 /* --- Discipline score gauge ------------------------------ */
 .hero-gauge {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
   z-index: 2;
+  flex-shrink: 0;
   width: 260px;
 }
 
@@ -1174,9 +1181,10 @@ footer {
   margin-top: 10px;
 }
 
-/* Narrow hero-inner on desktop so gauge doesn't overlap text */
-@media (min-width: 901px) {
-  .hero-inner { max-width: 600px; }
+/* Hide gauge on mobile — not enough width */
+@media (max-width: 900px) {
+  .hero-gauge { display: none; }
+  #hero .container { display: block; }
 }
 
 /* --- Lucide icon sizing ----------------------------------- */
