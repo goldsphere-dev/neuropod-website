@@ -1475,7 +1475,7 @@ footer {
 
 .peek-signal {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   font-size: 0.75rem;
   font-family: 'Courier New', monospace;
@@ -1484,6 +1484,7 @@ footer {
   border: 1px solid rgba(0, 200, 255, 0.15);
   border-radius: 6px;
   padding: 8px 12px;
+  min-height: 60px;
   filter: blur(3.5px);
   user-select: none;
   pointer-events: none;
