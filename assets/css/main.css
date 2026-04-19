@@ -779,7 +779,7 @@ nav.scrolled {
 .science-disclaimer {
   text-align: center;
   font-size: 1.05rem;
-  color: var(--text-muted);
+  color: var(--white);
   margin-top: 40px;
   max-width: 760px;
   margin-left: auto;
