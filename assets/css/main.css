@@ -778,10 +778,13 @@ nav.scrolled {
 
 .science-disclaimer {
   text-align: center;
-  font-size: 0.82rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
   margin-top: 40px;
-  font-style: italic;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
 }
 
 /* --- Who It's For ----------------------------------------- */
