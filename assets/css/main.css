@@ -1468,7 +1468,7 @@ footer {
 }
 
 .peek-signal-wrap {
-  margin-top: 4px;
+  margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid var(--navy-border);
 }
