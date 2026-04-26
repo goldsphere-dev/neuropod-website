@@ -310,21 +310,19 @@ nav.scrolled {
   box-shadow: 0 0 20px rgba(245,158,11,0.18), 0 0 48px rgba(245,158,11,0.07);
 }
 
-/* Pulsating dot — 10px, strong amber glow, 2s cycle */
+/* Pulsating dot — 10px, cyan, strong glow */
 .hero-eyebrow-dot {
   width: 10px; height: 10px;
   border-radius: 50%;
-  background: var(--amber);
-  box-shadow: 0 0 14px rgba(245,158,11,0.9), 0 0 28px rgba(245,158,11,0.5);
-  animation: dot-color-shift 2s ease-in-out infinite;
+  background: var(--accent);
+  box-shadow: 0 0 14px rgba(0,212,255,0.9), 0 0 28px rgba(0,212,255,0.5);
+  animation: dot-cyan-pulse 2s ease-in-out infinite;
   flex-shrink: 0;
 }
 
-@keyframes dot-color-shift {
-  0%        { background: var(--amber); box-shadow: 0 0 14px rgba(245,158,11,0.9), 0 0 28px rgba(245,158,11,0.5); opacity: 1; transform: scale(1); }
-  35%       { background: var(--amber); box-shadow: 0 0 4px rgba(245,158,11,0.3); opacity: 0.25; transform: scale(0.3); }
-  50%       { background: var(--accent); box-shadow: 0 0 4px rgba(0,212,255,0.3); opacity: 0.25; transform: scale(0.3); }
-  85%, 100% { background: var(--accent); box-shadow: 0 0 14px rgba(0,212,255,0.9), 0 0 28px rgba(0,212,255,0.5); opacity: 1; transform: scale(1); }
+@keyframes dot-cyan-pulse {
+  0%, 100% { box-shadow: 0 0 14px rgba(0,212,255,0.9), 0 0 28px rgba(0,212,255,0.5); opacity: 1; transform: scale(1); }
+  50%       { box-shadow: 0 0 4px rgba(0,212,255,0.3); opacity: 0.2; transform: scale(0.3); }
 }
 
 .hero-headline { margin-bottom: 28px; color: var(--white); }
@@ -497,7 +495,7 @@ nav.scrolled {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  animation: marquee-scroll 35s linear infinite;
+  animation: marquee-scroll 40s linear infinite;
 }
 .marquee-content:hover { animation-play-state: paused; }
 
@@ -510,26 +508,22 @@ nav.scrolled {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  padding: 0 80px;
+  padding: 0 60px;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.80rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-muted);
   white-space: nowrap;
 }
-.marquee-item [data-lucide] {
-  width: 14px; height: 14px; stroke-width: 2;
-  color: var(--amber); flex-shrink: 0;
-}
 .marquee-sep {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--amber);
-  opacity: 0.55;
-  box-shadow: 0 0 8px rgba(245,158,11,0.6);
+  color: #f59e0b;
+  font-size: 1.2rem;
+  line-height: 1;
   flex-shrink: 0;
+  padding: 0 4px;
+  opacity: 0.8;
 }
 
 /* ============================================================
@@ -902,13 +896,13 @@ nav.scrolled {
    ============================================================ */
 .science-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
 
-/* Cyan glow animation for cards 1 + 3 */
-@keyframes science-glow-pulse {
+/* Cyan glow pulse for cards 1 + 3 */
+@keyframes cyan-pulse-glow {
   0%, 100% {
-    filter: drop-shadow(0 0 8px rgba(0,212,255,0.65)) drop-shadow(0 0 24px rgba(0,212,255,0.25));
+    filter: drop-shadow(0 0 8px rgba(0,212,255,0.5)) drop-shadow(0 0 20px rgba(0,212,255,0.25));
   }
   50% {
-    filter: drop-shadow(0 0 22px rgba(0,212,255,1)) drop-shadow(0 0 50px rgba(0,212,255,0.55)) drop-shadow(0 0 90px rgba(0,212,255,0.22));
+    filter: drop-shadow(0 0 20px rgba(0,212,255,0.9)) drop-shadow(0 0 50px rgba(0,212,255,0.5)) drop-shadow(0 0 80px rgba(0,212,255,0.2));
   }
 }
 
@@ -925,7 +919,7 @@ nav.scrolled {
 .science-card {
   background: rgba(10,19,38,0.70); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius-lg); padding: 44px;
-  overflow: visible;
+  overflow: hidden;
   transition: border-color 0.4s ease, transform 0.45s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
 }
 .science-card:hover {
@@ -934,20 +928,19 @@ nav.scrolled {
   box-shadow: 0 22px 64px rgba(0,0,0,0.44), 0 0 48px rgba(0,212,255,0.08);
 }
 
-/* UPDATED: 7rem minimum on desktop, stronger glow animation */
 .science-stat {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(4rem, 9vw, 7rem);
+  font-size: clamp(3.8rem, 8vw, 6.5rem);
   font-weight: 800; letter-spacing: -0.05em; line-height: 1; margin-bottom: 14px;
+  white-space: nowrap;
   background: linear-gradient(135deg, #00d4ff 0%, #818cf8 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  animation: science-glow-pulse 3.5s ease-in-out infinite;
+  animation: cyan-pulse-glow 2.5s ease-in-out infinite;
   display: inline-block;
 }
 
-/* Guarantee 7rem on proper desktop */
 @media (min-width: 900px) {
-  .science-stat { font-size: 7rem; }
+  .science-stat { font-size: 6.5rem; }
 }
 
 /* ADDED: amber stat on 2nd science card */
