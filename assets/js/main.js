@@ -279,3 +279,13 @@ document.querySelectorAll('[data-count]').forEach(el => statObserver.observe(el)
 /* --- Dynamic footer year ---------------------------------- */
 const yearEl = document.getElementById('footer-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+
+/* --- Scroll indicator fade on scroll ---------------------- */
+const scrollIndicator = document.querySelector('.scroll-indicator');
+if (scrollIndicator) {
+  window.addEventListener('scroll', () => {
+    scrollIndicator.style.opacity = window.scrollY > 100 ? '0' : '1';
+    scrollIndicator.style.transition = 'opacity 0.4s ease';
+  }, { passive: true });
+}

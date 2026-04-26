@@ -105,7 +105,7 @@
     <svg class="neural-bg" aria-hidden="true" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="signal-glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+          <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
           <feComposite in="SourceGraphic" in2="blur" operator="over"/>
         </filter>
       </defs>
@@ -140,21 +140,21 @@
       <path class="nn-signal s5" filter="url(#signal-glow)" d="M110,570 L300,600 L500,560 L730,580"/>
       <path class="nn-signal s6" filter="url(#signal-glow)" d="M860,270 L730,440 L730,580 L1000,560"/>
       <!-- Nodes -->
-      <circle class="nn-node n1"  cx="580"  cy="110" r="7.5"/>
-      <circle class="nn-node n2"  cx="860"  cy="270" r="6.75"/>
-      <circle class="nn-node n3"  cx="370"  cy="250" r="6.75"/>
-      <circle class="nn-node n4"  cx="740"  cy="70"  r="6"/>
-      <circle class="nn-node n5"  cx="1000" cy="420" r="6.75"/>
-      <circle class="nn-node n6"  cx="730"  cy="440" r="6"/>
-      <circle class="nn-node n7"  cx="190"  cy="400" r="6"/>
-      <circle class="nn-node n8"  cx="500"  cy="400" r="6"/>
-      <circle class="nn-node n9"  cx="110"  cy="570" r="5.25"/>
-      <circle class="nn-node n10" cx="960"  cy="130" r="6"/>
-      <circle class="nn-node n11" cx="1100" cy="300" r="5.25"/>
-      <circle class="nn-node n12" cx="300"  cy="600" r="5.25"/>
-      <circle class="nn-node n13" cx="500"  cy="560" r="5.25"/>
-      <circle class="nn-node n14" cx="730"  cy="580" r="5.25"/>
-      <circle class="nn-node n15" cx="1000" cy="560" r="5.25"/>
+      <circle class="nn-node n1"  cx="580"  cy="110" r="11.25"/>
+      <circle class="nn-node n2"  cx="860"  cy="270" r="10.13"/>
+      <circle class="nn-node n3"  cx="370"  cy="250" r="10.13"/>
+      <circle class="nn-node n4"  cx="740"  cy="70"  r="9"/>
+      <circle class="nn-node n5"  cx="1000" cy="420" r="10.13"/>
+      <circle class="nn-node n6"  cx="730"  cy="440" r="9"/>
+      <circle class="nn-node n7"  cx="190"  cy="400" r="9"/>
+      <circle class="nn-node n8"  cx="500"  cy="400" r="9"/>
+      <circle class="nn-node n9"  cx="110"  cy="570" r="7.88"/>
+      <circle class="nn-node n10" cx="960"  cy="130" r="9"/>
+      <circle class="nn-node n11" cx="1100" cy="300" r="7.88"/>
+      <circle class="nn-node n12" cx="300"  cy="600" r="7.88"/>
+      <circle class="nn-node n13" cx="500"  cy="560" r="7.88"/>
+      <circle class="nn-node n14" cx="730"  cy="580" r="7.88"/>
+      <circle class="nn-node n15" cx="1000" cy="560" r="7.88"/>
     </svg>
 
     <div class="container">
@@ -244,6 +244,9 @@
         <p class="gauge-caption">Live session score · updated in real time</p>
       </div>
 
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+    </div>
     </div>
   </section>
 
