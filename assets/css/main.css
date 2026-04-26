@@ -478,7 +478,7 @@ nav.scrolled {
    CREDIBILITY MARQUEE STRIP
    ============================================================ */
 #trust-strip {
-  background: #000000;
+  background: var(--navy);
   border-top: none;
   border-bottom: none;
   padding: 0;
