@@ -864,13 +864,13 @@ nav.scrolled {
   box-shadow: 0 26px 64px rgba(0,0,0,0.44), 0 0 48px rgba(0,212,255,0.07);
 }
 
-/* Odd peek cards (1st, 3rd) → amber; even (2nd) → cyan default */
-.peek-card:nth-child(odd) .peek-badge {
+/* Even peek cards (2nd) → amber; odd (1st, 3rd) → cyan default */
+.peek-card:nth-child(even) .peek-badge {
   color: var(--amber);
   background: rgba(245,158,11,0.08);
   border-color: rgba(245,158,11,0.22);
 }
-.peek-card:nth-child(odd):hover {
+.peek-card:nth-child(even):hover {
   border-color: rgba(245,158,11,0.30);
   box-shadow: 0 26px 64px rgba(0,0,0,0.44), 0 0 48px rgba(245,158,11,0.08);
 }
@@ -1166,9 +1166,11 @@ nav.scrolled {
    ============================================================ */
 footer {
   border-top: 1px solid transparent;
-  background:
-    linear-gradient(var(--navy-mid), var(--navy-mid)) padding-box,
-    linear-gradient(90deg, transparent 0%, rgba(0,212,255,0.25) 35%, rgba(245,158,11,0.25) 65%, transparent 100%) border-box;
+  background-image:
+    linear-gradient(var(--navy-mid), var(--navy-mid)),
+    linear-gradient(90deg, transparent 0%, rgba(0,212,255,0.25) 35%, rgba(245,158,11,0.25) 65%, transparent 100%);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
   padding: 48px 0; position: relative; z-index: 9;
 }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
