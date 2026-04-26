@@ -1,5 +1,22 @@
 # NeuroPod Landing Page — Claude Code Instructions
 
+## On Every Session Start
+Read these memory files in order:
+1. `C:/Users/Admin/.claude/projects/C--Users-Admin-MyNeuroPod/memory/MEMORY.md`
+2. `C:/Users/Admin/.claude/projects/C--Users-Admin-MyNeuroPod/memory/project_overview.md`
+3. `C:/Users/Admin/.claude/projects/C--Users-Admin-MyNeuroPod/memory/project_recent_work.md`
+4. `C:/Users/Admin/.claude/projects/C--Users-Admin-MyNeuroPod/memory/feedback_key_rules.md`
+
+## On Every Session End
+When user says they are ending the session, do these steps:
+1. Update `project_recent_work.md` with latest git log and build state
+2. Save any new design decisions to `feedback_key_rules.md`
+3. Tell the user what prompt to use to start the next session
+
+## When Saving Memory
+1. Create/update the relevant file in `C:/Users/Admin/.claude/projects/C--Users-Admin-MyNeuroPod/memory/`
+2. Update `MEMORY.md` index if adding a new file
+
 ## Project Overview
 NeuroPod is a neuroscience-based AI trading discipline platform.
 Static HTML/CSS/JS landing page (no build step, no framework).
