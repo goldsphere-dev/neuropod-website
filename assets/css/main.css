@@ -1020,25 +1020,27 @@ nav.scrolled {
   max-width: 620px;
   margin: 48px auto 0;
   padding: 24px 28px;
-  border: 1px solid rgba(245,158,11,0.15);
-  border-radius: 12px;
+  border: 1px solid rgba(245,158,11,0.18);
+  border-radius: 14px;
   background: rgba(245,158,11,0.04);
   position: relative;
 }
 .who-qualifier::before {
   content: '"';
   position: absolute;
-  top: -18px; left: 24px;
+  top: -20px; left: 20px;
   font-size: 4rem;
-  color: rgba(245,158,11,0.25);
+  color: rgba(245,158,11,0.22);
   font-family: 'Space Grotesk', sans-serif;
   line-height: 1;
+  pointer-events: none;
 }
 .who-qualifier p {
   font-size: 1.05rem;
   color: var(--text);
   font-style: italic;
-  line-height: 1.7;
+  line-height: 1.75;
+  position: relative;
 }
 
 /* ============================================================
