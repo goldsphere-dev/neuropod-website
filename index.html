@@ -103,6 +103,12 @@
 
     <!-- Neural network background -->
     <svg class="neural-bg" aria-hidden="true" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="signal-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+      </defs>
       <!-- Edges -->
       <line class="nn-edge" x1="580" y1="110" x2="860" y2="270"/>
       <line class="nn-edge" x1="580" y1="110" x2="370" y2="250"/>
@@ -127,12 +133,12 @@
       <line class="nn-edge" x1="1000" y1="420" x2="1000" y2="560"/>
       <line class="nn-edge" x1="190" y1="400" x2="300" y2="600"/>
       <!-- Animated signal paths -->
-      <path class="nn-signal s1" d="M580,110 L860,270 L1000,420"/>
-      <path class="nn-signal s2" d="M580,110 L370,250 L190,400 L110,570"/>
-      <path class="nn-signal s3" d="M740,70 L960,130 L1100,300 L1000,420"/>
-      <path class="nn-signal s4" d="M500,400 L730,440 L1000,420"/>
-      <path class="nn-signal s5" d="M110,570 L300,600 L500,560 L730,580"/>
-      <path class="nn-signal s6" d="M860,270 L730,440 L730,580 L1000,560"/>
+      <path class="nn-signal s1" filter="url(#signal-glow)" d="M580,110 L860,270 L1000,420"/>
+      <path class="nn-signal s2" filter="url(#signal-glow)" d="M580,110 L370,250 L190,400 L110,570"/>
+      <path class="nn-signal s3" filter="url(#signal-glow)" d="M740,70 L960,130 L1100,300 L1000,420"/>
+      <path class="nn-signal s4" filter="url(#signal-glow)" d="M500,400 L730,440 L1000,420"/>
+      <path class="nn-signal s5" filter="url(#signal-glow)" d="M110,570 L300,600 L500,560 L730,580"/>
+      <path class="nn-signal s6" filter="url(#signal-glow)" d="M860,270 L730,440 L730,580 L1000,560"/>
       <!-- Nodes -->
       <circle class="nn-node n1"  cx="580"  cy="110" r="7.5"/>
       <circle class="nn-node n2"  cx="860"  cy="270" r="6.75"/>
@@ -203,9 +209,10 @@
         <svg class="gauge-svg" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated discipline score gauge showing 78 out of 100">
           <title>Discipline Score Gauge</title>
           <defs>
-            <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%"   stop-color="#00c8ff"/>
-              <stop offset="100%" stop-color="#818cf8"/>
+            <linearGradient id="gaugeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#00d4ff"/>
+              <stop offset="50%"  stop-color="#00e5c8"/>
+              <stop offset="100%" stop-color="#f59e0b"/>
             </linearGradient>
           </defs>
           <!-- Glow arc (behind) -->
@@ -247,18 +254,22 @@
   <div id="trust-strip" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-content">
-        <div class="trust-strip-item"><i data-lucide="microscope"></i><span>Built on Peer-Reviewed Neuroscience</span></div>
-        <div class="trust-strip-divider"></div>
-        <div class="trust-strip-item"><i data-lucide="cpu"></i><span>Neuroscience × AI × Real-Time Voice</span></div>
-        <div class="trust-strip-divider"></div>
-        <div class="trust-strip-item"><i data-lucide="shield-check"></i><span>Zero Financial Advice — Pure Behavioral Science</span></div>
-        <div class="trust-strip-divider"></div>
-        <div class="trust-strip-item"><i data-lucide="microscope"></i><span>Built on Peer-Reviewed Neuroscience</span></div>
-        <div class="trust-strip-divider"></div>
-        <div class="trust-strip-item"><i data-lucide="cpu"></i><span>Neuroscience × AI × Real-Time Voice</span></div>
-        <div class="trust-strip-divider"></div>
-        <div class="trust-strip-item"><i data-lucide="shield-check"></i><span>Zero Financial Advice — Pure Behavioral Science</span></div>
-        <div class="trust-strip-divider"></div>
+        <div class="marquee-item"><i data-lucide="file-text"></i><span>90+ Architecture Documents</span></div>
+        <div class="marquee-sep"></div>
+        <div class="marquee-item"><i data-lucide="microscope"></i><span>Built on Peer-Reviewed Neuroscience</span></div>
+        <div class="marquee-sep"></div>
+        <div class="marquee-item"><i data-lucide="cpu"></i><span>Neuroscience × AI × Real-Time Voice</span></div>
+        <div class="marquee-sep"></div>
+        <div class="marquee-item"><i data-lucide="shield-check"></i><span>Zero Financial Advice — Pure Behavioral Science</span></div>
+        <div class="marquee-sep"></div>
+        <div class="marquee-item"><i data-lucide="file-text"></i><span>90+ Architecture Documents</span></div>
+        <div class="marquee-sep"></div>
+        <div class="marquee-item"><i data-lucide="microscope"></i><span>Built on Peer-Reviewed Neuroscience</span></div>
+        <div class="marquee-sep"></div>
+        <div class="marquee-item"><i data-lucide="cpu"></i><span>Neuroscience × AI × Real-Time Voice</span></div>
+        <div class="marquee-sep"></div>
+        <div class="marquee-item"><i data-lucide="shield-check"></i><span>Zero Financial Advice — Pure Behavioral Science</span></div>
+        <div class="marquee-sep"></div>
       </div>
     </div>
   </div>
