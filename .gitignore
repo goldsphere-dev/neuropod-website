@@ -1,0 +1,12 @@
+# Environment variables — NEVER commit
+.env
+.env.local
+.env.production
+.dev.vars
+
+# Wrangler
+worker/.wrangler/
+.wrangler/
+
+# Node
+node_modules/

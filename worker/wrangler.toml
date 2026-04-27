@@ -25,3 +25,9 @@ database_id = "PASTE_DATABASE_ID_AFTER_CREATION"
 
 [vars]
 ALLOWED_ORIGIN = "https://www.myneuropod.com"
+SENDGRID_LIST_ID = "758ce5b6-5a9a-4df5-a3c5-374ca8e765bf"
+SENDGRID_FROM_EMAIL = "waitlist@myneuropod.com"
+SENDGRID_FROM_NAME = "NeuroPod"
+
+# SENDGRID_API_KEY is stored as a secret — never in this file
+# Run: wrangler secret put SENDGRID_API_KEY

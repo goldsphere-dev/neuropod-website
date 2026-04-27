@@ -1,0 +1,3 @@
+# Copy this file to .dev.vars for local development
+# NEVER commit .dev.vars — it is in .gitignore
+SENDGRID_API_KEY=SG.your_key_here
