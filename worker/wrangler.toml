@@ -13,10 +13,11 @@
 name = "myneuropod-waitlist"
 main = "src/index.ts"
 compatibility_date = "2025-01-01"
+workers_dev = true
 
 [[routes]]
 pattern = "www.myneuropod.com/subscribe*"
-zone_name = "myneuropod.com"
+zone_id = "c784d5c9be1518933971f8659a433270"
 
 [[d1_databases]]
 binding = "WAITLIST_DB"
