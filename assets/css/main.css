@@ -13,7 +13,7 @@
   --navy-card:   #0d1a30;
   --navy-border: #152238;
   --accent:      #00D1C1;
-  --accent-dim:  #0099cc;
+  --accent-dim:  #00A89B;
   --accent-glow: rgba(0, 209, 193, 0.15);
   --accent-glow-strong: rgba(0, 209, 193, 0.30);
   --violet:      #818cf8;
@@ -129,7 +129,7 @@ section { padding: 112px 0; position: relative; }
   overflow: hidden;
 }
 .btn-primary {
-  background: linear-gradient(135deg, #00D1C1 0%, #009ec0 100%);
+  background: linear-gradient(135deg, #00D1C1 0%, #00A89B 100%);
   color: var(--void);
   box-shadow: 0 4px 28px rgba(0, 209, 193, 0.28);
 }
@@ -246,7 +246,7 @@ nav.scrolled {
 .mobile-link:hover { color: var(--text); background: rgba(255,255,255,0.04); text-decoration: none; }
 .mobile-cta-link {
   margin: 8px 24px 0; padding: 14px 24px;
-  background: linear-gradient(135deg, #00D1C1, #009ec0);
+  background: linear-gradient(135deg, #00D1C1, #00A89B);
   color: var(--void); border-radius: var(--radius);
   font-family: 'Manrope', sans-serif; font-weight: 700; text-align: center;
 }
