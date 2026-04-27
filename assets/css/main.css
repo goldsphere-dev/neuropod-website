@@ -27,12 +27,15 @@
   --radius:      14px;
   --radius-lg:   22px;
   --transition:  0.3s ease;
+  --font-heading: 'Manrope', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--navy);
   color: var(--text);
   line-height: 1.65;
@@ -46,7 +49,7 @@ a:hover { text-decoration: underline; }
 
 /* --- Typography ------------------------------------------- */
 h1, h2, h3, h4 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.04em;
@@ -112,7 +115,7 @@ section { padding: 112px 0; position: relative; }
   padding: 15px 36px;
   border-radius: var(--radius);
   font-size: 1rem;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 600;
   cursor: pointer;
   border: none;
@@ -170,7 +173,7 @@ nav.scrolled {
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
 .nav-logo {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.4rem;
   font-weight: 800;
   color: var(--white);
@@ -184,7 +187,7 @@ nav.scrolled {
 .nav-link {
   display: block;
   padding: 8px 15px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-muted);
@@ -243,7 +246,7 @@ nav.scrolled {
   margin: 8px 24px 0; padding: 14px 24px;
   background: linear-gradient(135deg, #00d4ff, #009ec0);
   color: var(--void); border-radius: var(--radius);
-  font-family: 'Space Grotesk', sans-serif; font-weight: 700; text-align: center;
+  font-family: 'Manrope', sans-serif; font-weight: 700; text-align: center;
 }
 .mobile-cta-link:hover { color: var(--void); text-decoration: none; }
 
@@ -302,7 +305,7 @@ nav.scrolled {
   border: 1px solid rgba(245, 158, 11, 0.40);
   border-radius: 100px;
   padding: 7px 18px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--amber);
@@ -345,7 +348,7 @@ nav.scrolled {
   border: 1.5px solid rgba(0,212,255,0.25);
   background: rgba(255,255,255,0.04);
   backdrop-filter: blur(8px);
-  color: var(--text); font-size: 1rem; font-family: 'DM Sans', sans-serif;
+  color: var(--text); font-size: 1rem; font-family: 'Inter', sans-serif;
   outline: none;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
@@ -358,7 +361,7 @@ nav.scrolled {
 
 .hero-social-proof { display: flex; align-items: center; gap: 10px; margin-top: 48px; flex-wrap: wrap; }
 .proof-item {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 0.76rem; font-weight: 600; color: var(--text-muted);
   border: 1px solid rgba(0,212,255,0.18);
   background: rgba(0,212,255,0.05);
@@ -455,19 +458,19 @@ nav.scrolled {
   animation: gauge-pulse 2.5s ease-in-out infinite;
 }
 .gauge-score-num {
-  font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 800;
+  font-family: 'Manrope', sans-serif; font-size: 44px; font-weight: 800;
   fill: #ffffff; letter-spacing: -0.05em;
 }
 .gauge-label-main {
-  font-family: 'DM Sans', sans-serif; font-size: 8px; font-weight: 700;
+  font-family: 'Inter', sans-serif; font-size: 8px; font-weight: 700;
   fill: #f59e0b; letter-spacing: 0.14em;
 }
 .gauge-dim {
-  font-family: 'DM Sans', sans-serif; font-size: 7.5px; font-weight: 500;
+  font-family: 'Inter', sans-serif; font-size: 7.5px; font-weight: 500;
   fill: #334d6e; letter-spacing: 0.04em;
 }
 .gauge-caption {
-  text-align: center; font-family: 'DM Sans', sans-serif;
+  text-align: center; font-family: 'Inter', sans-serif;
   font-size: 0.72rem; color: var(--amber); margin-top: 12px;
 }
 
@@ -512,7 +515,7 @@ nav.scrolled {
   align-items: center;
   gap: 9px;
   padding: 0 60px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 0.80rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -534,7 +537,7 @@ nav.scrolled {
    ============================================================ */
 .section-label {
   display: inline-block;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 0.71rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -720,7 +723,7 @@ nav.scrolled {
   }
 }
 .stats-value {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(4rem, 7.5vw, 6.5rem);
   font-weight: 800; letter-spacing: -0.05em; line-height: 1; margin-bottom: 18px;
   background: linear-gradient(135deg, #00d4ff 0%, #818cf8 100%);
@@ -796,12 +799,12 @@ nav.scrolled {
   width: 40px; height: 40px; border-radius: 50%;
   background: rgba(0,212,255,0.08); border: 2px solid var(--accent);
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; font-weight: 700;
+  font-family: 'Manrope', sans-serif; font-size: 0.75rem; font-weight: 700;
   color: var(--accent); flex-shrink: 0; box-shadow: 0 0 14px rgba(0,212,255,0.22);
 }
 .timeline-content { padding: 6px 0 24px; }
 .timeline-content strong {
-  display: block; font-family: 'Space Grotesk', sans-serif;
+  display: block; font-family: 'Manrope', sans-serif;
   color: var(--white); font-size: 0.9rem; margin-bottom: 4px;
 }
 .timeline-content span { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
@@ -810,7 +813,7 @@ nav.scrolled {
   border-radius: 0 var(--radius) var(--radius) 0; padding: 18px 22px; margin-top: 8px;
 }
 .did-you-know-label {
-  font-family: 'Space Grotesk', sans-serif; font-size: 0.70rem; font-weight: 700;
+  font-family: 'Manrope', sans-serif; font-size: 0.70rem; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
 }
 .did-you-know p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
@@ -822,7 +825,7 @@ nav.scrolled {
   width: 50px; height: 50px; border-radius: 50%;
   background: var(--navy-card); border: 1px solid rgba(255,255,255,0.08);
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Space Grotesk', sans-serif; font-size: 0.7rem; font-weight: 800;
+  font-family: 'Manrope', sans-serif; font-size: 0.7rem; font-weight: 800;
   color: var(--text-muted); letter-spacing: 0.08em; flex-shrink: 0; margin: 0 auto;
 }
 .vs-card {
@@ -836,7 +839,7 @@ nav.scrolled {
 .vs-card--calm   { border-top: 2px solid var(--accent); }
 .vs-card--calm:hover { box-shadow: 0 22px 56px rgba(0,0,0,0.38), 0 0 36px rgba(0,212,255,0.07); }
 .vs-card-title {
-  font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; font-weight: 700;
+  font-family: 'Manrope', sans-serif; font-size: 0.75rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 22px;
   display: flex; align-items: center; gap: 6px;
 }
@@ -878,7 +881,7 @@ nav.scrolled {
 }
 
 .peek-badge {
-  display: inline-block; font-family: 'Space Grotesk', sans-serif;
+  display: inline-block; font-family: 'Manrope', sans-serif;
   font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--accent); background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.22);
   border-radius: 20px; padding: 3px 12px; width: fit-content;
@@ -889,7 +892,7 @@ nav.scrolled {
 .peek-signal-wrap { margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.06); }
 .peek-signal {
   display: flex; align-items: flex-start; gap: 8px;
-  font-size: 0.72rem; font-family: 'Courier New', monospace;
+  font-size: 0.72rem; font-family: 'IBM Plex Mono', monospace;
   color: var(--accent); background: rgba(0,212,255,0.05); border: 1px solid rgba(0,212,255,0.12);
   border-radius: 6px; padding: 10px 14px; min-height: 60px;
   filter: blur(3.5px); user-select: none; pointer-events: none;
@@ -940,7 +943,7 @@ nav.scrolled {
 }
 
 .science-stat {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: clamp(2.8rem, 6vw, 4.8rem);
   font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: 14px;
   display: block;
@@ -969,7 +972,7 @@ nav.scrolled {
 .science-card h3 { color: var(--white); font-size: 1.15rem; margin-bottom: 14px; }
 .science-card p  { font-size: 0.97rem; line-height: 1.74; color: var(--text-muted); }
 .science-disclaimer {
-  text-align: center; font-family: 'Space Grotesk', sans-serif;
+  text-align: center; font-family: 'Manrope', sans-serif;
   font-size: 1.08rem; color: var(--white); margin-top: 52px;
   max-width: 760px; margin-left: auto; margin-right: auto; line-height: 1.75;
 }
@@ -1033,7 +1036,7 @@ nav.scrolled {
   top: -20px; left: 20px;
   font-size: 4rem;
   color: rgba(245,158,11,0.22);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   line-height: 1;
   pointer-events: none;
 }
@@ -1064,7 +1067,7 @@ nav.scrolled {
   border: 1px solid rgba(245,158,11,0.38);
   border-radius: 100px;
   padding: 6px 16px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 0.70rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1115,7 +1118,7 @@ nav.scrolled {
   flex: 1; min-width: 260px; max-width: 360px; padding: 15px 22px;
   border-radius: var(--radius); border: 1.5px solid rgba(0,212,255,0.25);
   background: rgba(255,255,255,0.04); backdrop-filter: blur(8px);
-  color: var(--text); font-size: 1rem; font-family: 'DM Sans', sans-serif;
+  color: var(--text); font-size: 1rem; font-family: 'Inter', sans-serif;
   outline: none; transition: border-color var(--transition), box-shadow var(--transition);
 }
 .cta-form input[type="email"]::placeholder { color: var(--text-dim); }
@@ -1124,7 +1127,7 @@ nav.scrolled {
 /* ADDED: free note below CTA form */
 .cta-free-note {
   margin-top: 14px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-dim);
@@ -1178,7 +1181,7 @@ footer {
   padding: 48px 0; position: relative; z-index: 9;
 }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-.footer-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em; transition: text-shadow 0.3s ease; }
+.footer-logo { font-family: 'Manrope', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em; transition: text-shadow 0.3s ease; }
 .footer-logo:hover { text-shadow: 0 0 20px rgba(0,212,255,0.4); }
 .footer-logo span { color: var(--accent); }
 .footer-links { display: flex; gap: 28px; list-style: none; }
