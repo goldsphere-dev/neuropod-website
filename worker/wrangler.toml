@@ -21,7 +21,7 @@ zone_name = "myneuropod.com"
 [[d1_databases]]
 binding = "WAITLIST_DB"
 database_name = "myneuropod-waitlist"
-database_id = "PASTE_DATABASE_ID_AFTER_CREATION"
+database_id = "5c8cffa2-4ca6-4c89-b389-742ce4bfeeed"
 
 [vars]
 ALLOWED_ORIGIN = "https://www.myneuropod.com"
