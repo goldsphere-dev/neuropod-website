@@ -1,5 +1,5 @@
 /* ============================================================
-   NeuroPod Waitlist — Cloudflare Worker
+   MyNeuroPod Waitlist — Cloudflare Worker
    POST /subscribe  { email, source, honeypot }
    - Stores in D1 (full data ownership)
    - Adds to SendGrid Marketing List
@@ -55,8 +55,8 @@ async function sendWelcomeEmail(email: string, env: Env): Promise<void> {
     body: JSON.stringify({
       personalizations: [{ to: [{ email }] }],
       from: { email: env.SENDGRID_FROM_EMAIL, name: env.SENDGRID_FROM_NAME },
-      reply_to: { email: 'hello@myneuropod.com', name: 'NeuroPod' },
-      subject: "You're on the NeuroPod waitlist",
+      reply_to: { email: 'hello@myneuropod.com', name: 'MyNeuroPod' },
+      subject: "You're on the MyNeuroPod waitlist",
       content: [{ type: 'text/html', value: welcomeEmailHtml(email) }],
     }),
   });
@@ -68,7 +68,7 @@ function welcomeEmailHtml(email: string): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You're on the NeuroPod waitlist</title>
+  <title>You're on the MyNeuroPod waitlist</title>
 </head>
 <body style="margin:0;padding:0;background:#0d1a30;font-family:'Helvetica Neue',Arial,sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="background:#0d1a30;padding:40px 20px;">
@@ -80,7 +80,7 @@ function welcomeEmailHtml(email: string): string {
           <tr>
             <td align="center" style="padding-bottom:32px;">
               <span style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:24px;font-weight:800;color:#f0f6ff;letter-spacing:-0.04em;">
-                Neuro<span style="color:#00d4ff;">Pod</span>
+                MyNeuro<span style="color:#00C4B5;">Pod</span>
               </span>
             </td>
           </tr>
@@ -103,7 +103,7 @@ function welcomeEmailHtml(email: string): string {
 
               <!-- Body -->
               <p style="margin:0 0 24px;text-align:center;font-size:16px;color:#c8d8f0;line-height:1.7;">
-                Thanks for joining the NeuroPod waitlist. We're building the world's first AI that monitors your trading psychology in real time — and you're among the first to know when we launch.
+                Thanks for joining the MyNeuroPod waitlist. We're building the world's first AI that monitors your trading psychology in real time — and you're among the first to know when we launch.
               </p>
 
               <!-- Divider -->
@@ -136,7 +136,7 @@ function welcomeEmailHtml(email: string): string {
           <tr>
             <td align="center" style="padding-top:32px;">
               <p style="margin:0;font-size:12px;color:#4a6a8a;line-height:1.6;">
-                NeuroPod · <a href="https://www.myneuropod.com" style="color:#4a6a8a;text-decoration:none;">myneuropod.com</a><br>
+                MyNeuroPod · <a href="https://www.myneuropod.com" style="color:#4a6a8a;text-decoration:none;">myneuropod.com</a><br>
                 <a href="https://www.myneuropod.com/privacy-policy.html" style="color:#4a6a8a;text-decoration:none;">Privacy Policy</a>
               </p>
             </td>
