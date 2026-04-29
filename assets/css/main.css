@@ -229,7 +229,7 @@ nav.scrolled {
 .mobile-menu {
   display: none;
   background: var(--navy-card);
-  border-top: 1px solid var(--navy-border);
+  border-top: none;
   padding: 16px 0 24px;
   overflow: hidden;
   max-height: 0;
@@ -1247,6 +1247,7 @@ footer {
   #cta.section-diag::before { clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%); }
   #cta.section-diag { padding-bottom: 100px; }
   #hero { padding-top: 110px; }
+  nav { background: var(--void); }
   .hero-inner { display: flex; flex-direction: column; align-items: flex-start; }
   .hero-eyebrow { align-self: center; }
   .section-label { display: block; text-align: center; }
