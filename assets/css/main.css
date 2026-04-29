@@ -230,7 +230,7 @@ nav.scrolled {
   display: none;
   background: var(--navy-card);
   border-top: none;
-  padding: 16px 0 24px;
+  padding: 0;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.35s ease, padding 0.35s ease;
