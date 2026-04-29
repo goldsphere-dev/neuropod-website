@@ -38,7 +38,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--navy);
+  background: var(--void);
   color: var(--text);
   line-height: 1.65;
   font-size: 16px;
@@ -1246,6 +1246,8 @@ footer {
   .section-diag { margin-top: -40px; padding-top: calc(96px + 40px); padding-bottom: calc(96px + 40px); }
   #cta.section-diag::before { clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%); }
   #cta.section-diag { padding-bottom: 100px; }
+  .hero-eyebrow { align-self: center; }
+  .section-label { display: block; text-align: center; }
 }
 @media (max-width: 700px) {
   .vs-grid    { grid-template-columns: 1fr; gap: 16px; }
@@ -1263,5 +1265,7 @@ footer {
   .cta-box  { padding: 44px 28px; }
   .cta-form { flex-direction: column; align-items: center; }
   .cta-form input[type="email"] { max-width: 100%; }
-  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .cta-form .btn { width: 100%; max-width: 100%; }
+  .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+  .footer-links { justify-content: center; }
 }
