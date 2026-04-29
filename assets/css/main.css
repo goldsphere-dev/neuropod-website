@@ -1246,6 +1246,7 @@ footer {
   .section-diag { margin-top: -40px; padding-top: calc(96px + 40px); padding-bottom: calc(96px + 40px); }
   #cta.section-diag::before { clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%); }
   #cta.section-diag { padding-bottom: 100px; }
+  .hero-inner { display: flex; flex-direction: column; align-items: flex-start; }
   .hero-eyebrow { align-self: center; }
   .section-label { display: block; text-align: center; }
 }
