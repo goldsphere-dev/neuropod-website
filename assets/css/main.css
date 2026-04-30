@@ -186,8 +186,8 @@ nav.scrolled {
 }
 .nav-logo:hover { text-decoration: none; }
 .nav-logo span { color: var(--accent); }
-.nav-logo img { display: block; height: 28px; width: auto; }
-@media (max-width: 768px) { .nav-logo img { height: 22px; } }
+.nav-logo img { display: block; height: 32px; width: auto; }
+@media (max-width: 768px) { .nav-logo img { height: 26px; } }
 .nav-cta { padding: 10px 24px; font-size: 0.88rem; }
 .nav-links { display: flex; list-style: none; gap: 2px; align-items: center; }
 .nav-link {
@@ -1190,7 +1190,7 @@ footer {
 .footer-logo { font-family: 'Manrope', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em; transition: filter 0.3s ease; display: inline-flex; align-items: center; }
 .footer-logo:hover { filter: drop-shadow(0 0 12px rgba(0,196,181,0.45)); }
 .footer-logo span { color: var(--accent); }
-.footer-logo img { display: block; height: 24px; width: auto; }
+.footer-logo img { display: block; height: 28px; width: auto; }
 .footer-links { display: flex; gap: 28px; list-style: none; }
 .footer-links a { font-size: 0.85rem; color: var(--text-muted); transition: color var(--transition); }
 .footer-links a:hover { color: var(--text); text-decoration: none; }
