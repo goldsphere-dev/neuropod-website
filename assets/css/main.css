@@ -969,6 +969,7 @@ nav.scrolled {
   background: linear-gradient(135deg, #FFB830 0%, #fbbf24 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   animation: science-glow-pulse-amber 3.5s ease-in-out infinite;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
 }
 .science-card:nth-child(2):hover {
   border-color: rgba(255,184,48,0.35);
