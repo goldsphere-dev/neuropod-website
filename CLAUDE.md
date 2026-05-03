@@ -126,6 +126,15 @@ JS fade-out on scroll > 100px is in `main.js` (end of file).
 | `amber-border-pulse` | CTA section border |
 | `marquee-scroll` | trust strip |
 
+## Repo Git Isolation — ENFORCED
+This is a standalone repository (`goldsphere-dev/neuropod-website`). ALL git operations must stay inside `C:\Users\Admin\MyNeuroPod` ONLY.
+
+- NEVER stage, commit, or push files from any other project (promopod, social media pipeline, or any other repo) into this repo
+- NEVER run git commands in this directory as part of a task that belongs to another project
+- NEVER merge changes from another repo into this one
+- The ONLY files that belong in this repo are: `index.html`, `privacy-policy.html`, `assets/`, `worker/`, `robots.txt`, `sitemap.xml`, `.gitignore`, `CLAUDE.md`, `README.md`
+- If a task involves another project folder, switch to that folder's git context entirely — do NOT run any `git add`, `git commit`, or `git push` here
+
 ## Deployment Rules
 - Never push directly to `master`
 - Always use `feature/pre-launch-1pager` (or a new feature branch)
